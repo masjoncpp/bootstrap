@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;500&display=swap');
+
+:root {
+  --warna-latar: #f4f1ea;      /* Krem / Off-white */
+  --warna-teks: #4a403a;       /* Cokelat Tua */
+  --warna-aksen: #707954;      /* Hijau Zaitun */
+  --warna-sorotan: #c0a26e;   /* Emas */
+  --font-judul: 'Lora', serif;
+  --font-teks: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-teks);
+  background-color: var(--warna-latar);
+  color: var(--warna-teks);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-judul);
+  color: var(--warna-teks);
+  font-weight: 700; 
+}
+
+.btn-primary {
+  background-color: var(--warna-aksen);
+  border-color: var(--warna-aksen);
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #5a6144; 
+  border-color: #5a6144;
+}
+
+.card-title {
+    color: var(--warna-teks);
+}
+
+.jumbotron-custom {
+    background-color: #e9e6e0; 
+}
+
+.footer-custom {
+    background-color: var(--warna-teks); 
+    color: var(--warna-latar); 
+}
+
+.footer-custom a {
+    color: var(--warna-latar);
+    text-decoration: underline;
+}
+/* Style untuk Navbar Dinamis */
+.navbar {
+    background-color: transparent !important; /* Awalnya transparan */
+    transition: background-color 0.4s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: var(--warna-teks) !important; /* Berubah jadi cokelat tua saat di-scroll */
+}
+
+
+/* Style untuk Tombol Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none; /* Awalnya disembunyikan */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(20px);
+    z-index: 99;
+    background-color: var(--warna-aksen);
+    border-color: var(--warna-aksen);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.back-to-top.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: #5a6144;
+    border-color: #5a6144;
+}
+/* ============================================ */
+/* PERBAIKAN WARNA NAVBAR AWAL          */
+/* ============================================ */
+
+/* Atur warna teks & ikon navbar di kondisi awal (belum di-scroll) */
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .navbar-toggler-icon {
+    color: var(--warna-teks); /* Pakai warna cokelat tua */
+    transition: color 0.4s ease-in-out; /* Animasi perubahan warna */
+}
+
+/* Ganti filter ikon hamburger agar warnanya jadi cokelat tua */
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(74, 64, 58, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* Pastikan warna teks & ikon jadi terang saat navbar di-scroll */
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+    color: var(--warna-latar); /* Pakai warna krem/terang */
+}
+
+/* Ganti filter ikon hamburger jadi terang saat di-scroll */
+.navbar.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(244, 241, 234, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Atur warna link saat aktif atau disorot */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--warna-sorotan); /* Pakai warna emas */
+}
+
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: white;
+}
